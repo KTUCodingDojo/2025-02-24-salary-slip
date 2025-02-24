@@ -1,5 +1,6 @@
 ﻿
 
+
 namespace SalarySlipGenerator
 {
     public class SalarySlipGenerator
@@ -7,6 +8,8 @@ namespace SalarySlipGenerator
         const decimal PSDRate = 6.98M;
         const decimal VSDRate = 12.52M;
         const decimal VSDPensionRate = 3M;
+        const decimal MMA = 1038M;
+        const decimal NPD = 747M;
 
 
         //NOTE: do not modify signature
@@ -34,6 +37,14 @@ namespace SalarySlipGenerator
             }
 
             return employee.GrossSalary * VSDRate / 100;
+        }
+
+        public decimal CalculateNPD(Employee employee)
+        {
+            if (employee.GrossSalary > MMA)
+                return NPD - 0.49M * (employee.GrossSalary - MMA);
+
+            return NPD;
         }
     }
 }
