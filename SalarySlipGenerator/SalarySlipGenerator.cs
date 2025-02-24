@@ -53,5 +53,10 @@ namespace SalarySlipGenerator
 
             return Math.Max(0, Math.Round(400 - 0.18M * (employee.GrossSalary - 642), 2));
         }
+
+        public decimal CalculateGPM(Employee employee)
+        {
+            return Math.Max(0, Math.Round( (employee.GrossSalary - CalculateNPD(employee)) * 0.2M , 2));
+        }
     }
 }

@@ -117,5 +117,27 @@ namespace SalarySlipGenerator.Tests
             actualNPD.Should().Be(expectedNPD);
         }
 
+        [Theory]
+        [InlineData("E001", "Jonas Jonaitis", 500, true, 0)]
+        [InlineData("E001", "Jonas Jonaitis", 747, true, 0)]
+        [InlineData("E001", "Jonas Jonaitis", 1000, false, 50.60)]
+        [InlineData("E001", "Jonas Jonaitis", 2000, false, 344.88)]
+        [InlineData("E001", "Jonas Jonaitis", 3000, false, 600)]
+        public void CalculateGPM_WithEmployeeParameters_ReturnsCorrectVSD(
+            string id,
+            string fullName,
+            decimal grossSalary,
+            bool isSavingForPension,
+            decimal expectedGPM)
+        {
+            // Arrange
+            var employee = new Employee(id, fullName, grossSalary, isSavingForPension);
+
+            // Act
+            decimal actualGPM = _generator.CalculateGPM(employee);
+
+            // Asserts
+            actualGPM.Should().Be(expectedGPM);
+        }
     }
 }
