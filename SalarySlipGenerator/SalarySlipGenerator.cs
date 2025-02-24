@@ -31,7 +31,7 @@ namespace SalarySlipGenerator
 
         public decimal CalculateVSD(Employee employee)
         {
-            if(employee.IsSavingForPension)
+            if (employee.IsSavingForPension)
             {
                 return employee.GrossSalary * (VSDRate + VSDPensionRate) / 100;
             }
@@ -41,10 +41,14 @@ namespace SalarySlipGenerator
 
         public decimal CalculateNPD(Employee employee)
         {
-            if (employee.GrossSalary > MMA)
-                return NPD - 0.49M * (employee.GrossSalary - MMA);
-
-            return NPD;
+            if (employee.GrossSalary < MMA)
+            {
+                return NPD;
+            }
+            else
+            {
+                return Math.Round(NPD - 0.49M * (employee.GrossSalary - MMA),2);
+            }
         }
     }
 }
