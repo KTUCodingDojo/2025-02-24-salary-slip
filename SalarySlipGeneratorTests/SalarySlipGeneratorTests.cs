@@ -48,7 +48,7 @@ namespace SalarySlipGenerator.Tests
         [Theory]
         [InlineData("E001", "Jonas Jonaitis", 1000, false, 69.8)]
         [InlineData("E001", "Jonas Jonaitis", 2000, false, 139.6)]
-        public void GenerateFor_WithEmployeeParameters_ReturnsCorrectPSD(
+        public void CalculatePSD_WithEmployeeParameters_ReturnsCorrectPSD(
             string id,
             string fullName,
             decimal grossSalary,
@@ -59,10 +59,10 @@ namespace SalarySlipGenerator.Tests
             var employee = new Employee(id, fullName, grossSalary, isSavingForPension);
 
             // Act
-            var salarySlip = _generator.GenerateFor(employee);
+            decimal ActualPSD = _generator.CalculatePSD(employee);
 
             // Asserts
-            salarySlip.PSD.Should().Be(expectedPSD);
+            ActualPSD.Should().Be(expectedPSD);
         }
     }
 }
