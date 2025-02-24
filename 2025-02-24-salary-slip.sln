@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalarySlipGenerator", "SalarySlipGenerator\SalarySlipGenerator.csproj", "{4D0EDFAA-6157-46D4-80ED-EDD0F88A80CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalarySlipGeneratorTests", "SalarySlipGeneratorTests\SalarySlipGeneratorTests.csproj", "{3E48FC60-87C7-423A-A892-49B2EF55921C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4D0EDFAA-6157-46D4-80ED-EDD0F88A80CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D0EDFAA-6157-46D4-80ED-EDD0F88A80CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D0EDFAA-6157-46D4-80ED-EDD0F88A80CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D0EDFAA-6157-46D4-80ED-EDD0F88A80CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E48FC60-87C7-423A-A892-49B2EF55921C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E48FC60-87C7-423A-A892-49B2EF55921C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E48FC60-87C7-423A-A892-49B2EF55921C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E48FC60-87C7-423A-A892-49B2EF55921C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3A5C90F1-532C-4347-9B58-A6B7CAF6C400}
+	EndGlobalSection
+EndGlobal
