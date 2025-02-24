@@ -6,6 +6,7 @@ namespace SalarySlipGenerator
     {
         const decimal PSDRate = 6.98M;
         const decimal VSDRate = 12.52M;
+        const decimal VSDPensionRate = 3M;
 
 
         //NOTE: do not modify signature
@@ -27,6 +28,11 @@ namespace SalarySlipGenerator
 
         public decimal CalculateVSD(Employee employee)
         {
+            if(employee.IsSavingForPension)
+            {
+                return employee.GrossSalary * (VSDRate + VSDPensionRate) / 100;
+            }
+
             return employee.GrossSalary * VSDRate / 100;
         }
     }
