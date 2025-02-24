@@ -1,9 +1,13 @@
 ﻿
+
 namespace SalarySlipGenerator
 {
     public class SalarySlipGenerator
     {
         const decimal PSDRate = 6.98M;
+        const decimal VSDRate = 12.52M;
+
+
         //NOTE: do not modify signature
         public SalarySlip GenerateFor(Employee employee)
         {
@@ -19,6 +23,11 @@ namespace SalarySlipGenerator
         public decimal CalculatePSD(Employee employee)
         {
             return employee.GrossSalary * PSDRate / 100;
+        }
+
+        public decimal CalculateVSD(Employee employee)
+        {
+            return employee.GrossSalary * VSDRate / 100;
         }
     }
 }

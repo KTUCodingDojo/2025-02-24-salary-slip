@@ -59,10 +59,31 @@ namespace SalarySlipGenerator.Tests
             var employee = new Employee(id, fullName, grossSalary, isSavingForPension);
 
             // Act
-            decimal ActualPSD = _generator.CalculatePSD(employee);
+            decimal actualVSD = _generator.CalculatePSD(employee);
 
             // Asserts
-            ActualPSD.Should().Be(expectedPSD);
+            actualVSD.Should().Be(expectedPSD);
         }
+
+        [Theory]
+        [InlineData("E001", "Jonas Jonaitis", 1000, false, 125.20)]
+        [InlineData("E001", "Jonas Jonaitis", 2000, false, 250.40)]
+        public void CalculateVSD_WithEmployeeParameters_ReturnsCorrectVSD(
+            string id,
+            string fullName,
+            decimal grossSalary,
+            bool isSavingForPension,
+            decimal expectedVSD)
+        {
+            // Arrange
+            var employee = new Employee(id, fullName, grossSalary, isSavingForPension);
+
+            // Act
+            decimal actualVSD = _generator.CalculateVSD(employee);
+
+            // Asserts
+            actualVSD.Should().Be(expectedVSD);
+        }
+
     }
 }
