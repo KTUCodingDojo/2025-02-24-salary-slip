@@ -95,6 +95,10 @@ namespace SalarySlipGenerator.Tests
         [InlineData("E001", "Jonas Jonaitis", 1200, false, 667.62)]
         [InlineData("E001", "Jonas Jonaitis", 2300, false, 128.62)]
         [InlineData("E001", "Jonas Jonaitis", 2387.29, false, 85.85)]
+        [InlineData("E001", "Jonas Jonaitis", 2400, false, 83.56)]
+        [InlineData("E001", "Jonas Jonaitis", 2800, false, 11.56)]
+        [InlineData("E001", "Jonas Jonaitis", 2864.22, false, 0)]
+        [InlineData("E001", "Jonas Jonaitis", 4000, false, 0)]
 
         public void CalculateNPD_WithEmployeeParameters_ReturnsCorrectNPD(
             string id,
