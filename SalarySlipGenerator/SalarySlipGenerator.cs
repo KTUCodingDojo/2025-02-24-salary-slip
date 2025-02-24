@@ -11,7 +11,7 @@ namespace SalarySlipGenerator
         const decimal MMA = 1038M;
         const decimal NPD = 747M;
         const decimal NPDMiddleBound = 2387.89M;
-
+        const decimal VDU = 2108.88M;
 
         //NOTE: do not modify signature
         public SalarySlip GenerateFor(Employee employee)
@@ -32,12 +32,13 @@ namespace SalarySlipGenerator
 
         public decimal CalculateVSD(Employee employee)
         {
+            decimal effectiveSalary = Math.Min(employee.GrossSalary, 5*VDU);
             if (employee.IsSavingForPension)
             {
-                return employee.GrossSalary * (VSDRate + VSDPensionRate) / 100;
+                return Math.Round(effectiveSalary * (VSDRate + VSDPensionRate) / 100, 2);
             }
 
-            return employee.GrossSalary * VSDRate / 100;
+            return Math.Round(effectiveSalary * VSDRate / 100, 2);
         }
 
         public decimal CalculateNPD(Employee employee)

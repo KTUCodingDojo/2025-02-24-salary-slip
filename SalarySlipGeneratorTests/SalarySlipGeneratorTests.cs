@@ -69,6 +69,9 @@ namespace SalarySlipGenerator.Tests
         [InlineData("E001", "Jonas Jonaitis", 1000, false, 125.20)]
         [InlineData("E001", "Jonas Jonaitis", 2000, false, 250.40)]
         [InlineData("E001", "Jonas Jonaitis", 1000, true, 155.20)]
+        [InlineData("E001", "Jonas Jonaitis", 10544.4, false, 1320.16)]
+        [InlineData("E001", "Jonas Jonaitis", 11000, false, 1320.16)]
+        [InlineData("E001", "Jonas Jonaitis", 11000, true, 1636.49)]
         public void CalculateVSD_WithEmployeeParameters_ReturnsCorrectVSD(
             string id,
             string fullName,
