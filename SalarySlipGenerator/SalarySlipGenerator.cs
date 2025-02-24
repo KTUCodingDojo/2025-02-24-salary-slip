@@ -5,7 +5,13 @@
         //NOTE: do not modify signature
         public SalarySlip GenerateFor(Employee employee)
         {
-            return new SalarySlip();
+            var salarySlip = new SalarySlip();
+
+            salarySlip.GrossSalary = employee.GrossSalary;
+
+            salarySlip.PSD = salarySlip.GrossSalary * 0.0698M;
+
+            return salarySlip;
         }
     }
 }
